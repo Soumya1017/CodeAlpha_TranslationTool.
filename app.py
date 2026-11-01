@@ -39,7 +39,12 @@ with col1:
 with col2:
     target_name = st.selectbox("To", names, index=names.index("Hindi"))
 
-text = st.text_area("Text to translate", height=150, max_chars=5000)
+text = st.text_area(
+    "Text to translate",
+    height=150,
+    max_chars=5000,
+    help="Type in the language's own script (for example తెలుగు), not in English letters.",
+)
 
 if st.button("Translate", type="primary"):
     if not text.strip():
